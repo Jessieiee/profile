@@ -12,9 +12,9 @@ The project we delivered to our client is a website about the QUT AR project, wh
 
 My responsibilities in the capstone can be divided into two parts. The first part is team coordination. For example, collecting and arranging documents before weekly meetings with our client. Communicating with team members to update working progress to ensure the project can be completed timely. In addition, upload meeting notes and share important information on Trello to help team members keep up the pace. The second part is the individual working part. Release plans and user stories have been drafted and continuously updated after weekly meetings and customer requests. Meanwhile, I created the structure of the website and the draft of each page after discussing it with team members and the client. 
   
-Detailed information and report have been attached in the following link:  
-https://jessieiee.github.io/profile/Capstone/Team_Omnipotent_Demo.mp4  
-https://jessieiee.github.io/profile/Capstone/Final_Report.pdf  
+Detailed information and report have been attached in the following link: 
+<a href="jessieiee.github.io/profile/Capstone/Team_Omnipotent_Demo.mp4" target="_blank">PDF.</a>  
+<a href="jessieiee.github.io/profile/Capstone/Final_Report.pdf" target="_blank">PDF.</a>
 
 ### Launch U Trade Accelerator
 Location: QUT
