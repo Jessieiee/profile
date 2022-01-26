@@ -3,9 +3,9 @@ A hardworking and reliable individual who is a master's student at USYD, majorin
 
 ## Projects
 ### Capstone Project
-Location: QUT
-Duration: 2020.3-2020.11
-Supervisor: Joel Harman
+Location: QUT  
+Duration: 2020.3-2020.11  
+Supervisor: Joel Harman  
 <p align="justify">
 As a funded research project that aims to develop new social use for AR, the school of Computer Science seeks to create new prototypes and raise awareness of new ways to use AR. Our client is Joel Harman, he is a researcher at the Science and Engineering Faculty and School of Computer Science in QUT. Our industry partner is the QUT School of Computer Science. The goal is to develop a website that can host information related to AR and provide an online platform where prototypes can be demonstrated and explore the influence of AR on the social skill and beliefs of users, supporting the School of Computer Science to achieve their goal.
 </p> 
