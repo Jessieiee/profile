@@ -30,7 +30,7 @@ My responsibilities in this project are competitor analysis which means making c
 
 Detailed information have been attached in the following link: 
 <a href="LTA/TPE_Market_Research_Report_FINAL_pptx.pdf" target="_blank">Presentation,  </a>
-<a href="LTA/1.jpg" target="_blank">Certification</a>
+<a href="LTA/1.png" target="_blank">Certification</a>
 
 ### 
 
