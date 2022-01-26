@@ -23,8 +23,15 @@ Detailed information and report have been attached in the following link:
 <a href="Capstone/Final_Report.pdf" target="_blank">Final report</a>
 
 ### Launch U Trade Accelerator
-Location: QUT
-Duration: 2020.7-2020.8
+Location: QUT  
+Duration: 2020.7-2020.8  
+Turner Precision Engineering (Aust) Pty Ltd is a family-owned and operated business located on the Sunshine Coast. With over 40+ years of experience in the industry, TPE has a reputation for working closely with customers, helping to streamline processes, and refining component engineering procedures. With a lifetime of experience across a wide range of industries including medical, mining, defense, aviation, and agriculture TPE has the knowledge and technical skill to tackle projects from virtually any field. TPE currently sells directly to the USA via their website and Amazon, however, looking to continue expansion in the USA. The goal of this project is to help them identify potential problems to better improve their competitiveness, analyze their current situations, and provide a new development direction by market research.  
+
+My responsibilities in this project are competitor analysis which means making comparisons with similar companies from different aspects to find advantages and weaknesses. I selected five of the most popular related companies and identified six areas that must be considered after communicating with clients. After collecting data from websites like Amazon and Google, a chart was utilized to display the results. Different colors were applied to display different situations, green denotes advantage exists and red represents weakness respectively.  
+
+Detailed information have been attached in the following link: 
+<a href="Capstone/Team_Omnipotent_Demo.mp4" target="_blank">Website Demo, </a>
+
 ### 
 
 ### Markdown
