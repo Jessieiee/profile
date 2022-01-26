@@ -30,7 +30,8 @@ Turner Precision Engineering (Aust) Pty Ltd is a family-owned and operated busin
 My responsibilities in this project are competitor analysis which means making comparisons with similar companies from different aspects to find advantages and weaknesses. I selected five of the most popular related companies and identified six areas that must be considered after communicating with clients. After collecting data from websites like Amazon and Google, a chart was utilized to display the results. Different colors were applied to display different situations, green denotes advantage exists and red represents weakness respectively.  
 
 Detailed information have been attached in the following link: 
-<a href="Capstone/Team_Omnipotent_Demo.mp4" target="_blank">Website Demo, </a>
+<a href="LTA/TPE_Market_Research_Report_FINAL_pptx.pdf" target="_blank">Presentation,  </a>
+<a href="LTA/1.jpg" target="_blank">Certification</a>
 
 ### 
 
