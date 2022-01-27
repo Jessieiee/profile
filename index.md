@@ -51,8 +51,8 @@ Duration: 2021.4-2021.5
 The purpose of the project about exploratory data analysis on mobile devices data is to discover the general trend of mobile devices and the companies that tried to lead the market with new features. The most successfully market-leading companies have been listed finally after comparison and analysis. Our team starts with data type analysis and periods division which are the fundamental and essential parts. The following parts are visualizations based on different durations to understand the trend of different devices in different periods and detect representative companies that led the change of the new features. Tableau was the key tool we used to create diagrams and all explanations were based on the charts. Common visual attributes like color, shape, and size have been considered to increase the readability of charts and help stakeholders better understand and make decisions. 
 </p>
 Detailed information have been attached in the following links:
-<a href="LTA/TPE_Market_Research_Report_FINAL_pptx.pdf" target="_blank">Presentation,  </a>
-<a href="LTA/1.png" target="_blank">Certification</a> 
+<a href="Tableau/group_report.pdf" target="_blank">Group Report,  </a>
+<a href="Tableau/personal_report.pdf" target="_blank">Individual Report</a> 
 
 ### Data Analysis in the Social Sciences
 Location:USYD  
