@@ -42,7 +42,7 @@ The city of Sydney undertakes the Floor Space and Employment Survey (FSE) every 
 </p>
 Detailed information have been attached in the following links:
 <a href="Tableau/final.pdf" target="_blank">Report,  </a>
-<a href="https://public.tableau.com/app/profile/ye.cai/viz/IndustriesDistributioninSydneyin2012and2017/Dashboard" target="_blank">Visualiozation</a>
+<a href="https://public.tableau.com/app/profile/ye.cai/viz/IndustriesDistributioninSydneyin2012and2017/Dashboard" target="_blank">Visualization</a>
 
 ### Data Visualization Group Project
 Location: USYD  
@@ -58,6 +58,14 @@ Detailed information have been attached in the following links:
 Location:USYD  
 Duration: 2021.12  
 <p align="justify">
+The bushfire season in eastern Australia began early in 2019, with several serious fires across Northern Australia in June, followed by the unprecedented burning of subtropical rainforest in Queensland in September. In the following months the fire moved along the coast of New South Wales, and reached East Victoria by late December. Sydney and Canberra were shrouded in smoke for large parts of Spring and Summer. Breathing masks sold out in Melbourne in January, when it too was covered by ash from the nearby fires. Most experts say the hot and dry conditions that made these fires so severe were exacerbated by climate change. Others mostly non-experts blamed arson or a lack of hazard reduction burns. This leads us to wonder if the scale and intensity of these fires, and the widespread impact from smoke across several of Australia’s largest metropolitan areas, may have shifted public opinion on whether climate change was occurring in Australia. 
+</p>
+<p align="justify">
+This report aims to discover Australian attitudes on climate change before and after experiencing extreme weather disasters and investigate the impact of different variables. The prediction is accomplished by a logistic regression model and people have more probability to modify their opinions if the result is closer to 1. R language was utilized to create visualizations and complete the report. Finally, theories of motivated reasoning, human motivation, and social cognition have been confirmed to have an effect on people to revision views. I proved that trust and political orientation have a strong influence on people’s opinions. Higher trust or Australians who support the liberal-national party coalition indicates a higher probability to modify minds. Other variables contain education level, experience and income show less impact than trust and politics. For example, a higher education level or middle income implies a lower possibility to change opinions on climate change. In addition, controlling gender and age which are two confounding factors have also been ensuring useful to provide help on analysis and prevent distorted results. However, religion is not found to have any significant impact on opinion shifts.
+</p>
+Detailed information have been attached in the following links:
+<a href="R/Report.pdf" target="_blank">Final Report,  </a>
+<a href="R/Code.Rmd" target="_blank">Code</a> 
   
 ### Home Hemodialysis Research Project
 Location USYD  
