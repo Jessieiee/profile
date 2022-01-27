@@ -57,7 +57,7 @@ Detailed information have been attached in the following links:
 <a href="Tableau/personal_report.pdf" target="_blank">Individual Report</a> 
 
 ### Data Analysis in the Social Sciences
-Location:USYD  
+Location: USYD  
 Duration: 2021.12  
 Tools: R Language  
 <p align="justify">
@@ -71,7 +71,7 @@ Detailed information have been attached in the following links:
 <a href="R/Code.Rmd" target="_blank">Code</a> 
   
 ### Home Hemodialysis Research Project
-Location USYD  
+Location: USYD  
 Duration: 2021.8-Present  
 Supervisor: Professor Jinman Kim  
 Co-supervisor: Dr Na Liu  
@@ -86,5 +86,10 @@ Detailed information have been attached in the following links:
 <a href="Hemodialysis/Report.pdf" target="_blank">Report(Incomplete)  </a>
 
 ### Support or Contact
+Name: Ye Cai  
+Email: caiye2093@gmail.com  
+Mobile: 0420404382  
+Address: Zetland, New South Wales, 2017
+Linkedin: <a href="https://www.linkedin.com/in/ye-cai-907131206/" target="_blank">Ye Cai</a>  
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
