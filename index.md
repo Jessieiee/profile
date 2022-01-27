@@ -82,7 +82,8 @@ Remote patient monitoring (RPM) has rapidly become a common approach for complet
 <p align="justify">
 In this study, the aim was to resolve the ignorance of communication by analyzing the relationship between the frequency of text messages and the compliance with combined emotions. Several machine learning methods would be used to classify and calculate the accuracy of predictions. The result will prove whether the number of messages would affect compliance and the role of emotions in communication. More suggestions about how to improve health care services and more tips about communications can be proposed to increase patients’ satisfaction and reduce nonadherence. The rest of the paper contains the introduction of hemodialysis to understand the background and gaps, followed by methods introduction to explain the algorithms of different machine learning methods.
 </p>
-<a href="Hemodialysis/Report.pdf" target="_blank">Report,  </a>
+Detailed information have been attached in the following links:
+<a href="Hemodialysis/Report.pdf" target="_blank">Report(Incomplete)  </a>
 
 ### Support or Contact
 
