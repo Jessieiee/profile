@@ -38,7 +38,7 @@ Detailed information have been attached in the following links:
 Location: USYD  
 Duration: 2021.2-2021.3  
 <p align="justify">
-The city of Sydney undertakes the Floor Space and Employment Survey (FSE) every five years to collect the data on all industries for every building in the area. This project started in 2012 and has finished three times of collection, each survey took around 10 months to complete. During the data collection phase, surveyors visited each business in the city of Sydney to record specific data needed in the surveys. The project aims to analyze the occupation of FES industries between 2012 and 2017 to help stakeholders better understand the trend of business development and provide help to find jobs or make decisions. Data type and typical mistakes have been discussed in the report to ensure proper data operation and utilization. Final visualization and symbolic representations have been demonstrated with explanations.  
+The city of Sydney undertakes the Floor Space and Employment Survey (FSE) every five years to collect the data on all industries for every building in the area. This project started in 2012 and has finished three times of collection, each survey took around 10 months to complete. During the data collection phase, surveyors visited each business in the city of Sydney to record specific data needed in the surveys. The project aims to analyze the occupation of FES industries between 2012 and 2017 to help stakeholders better understand the trend of business development and provide help to find jobs or make decisions. Data type and typical mistakes have been discussed in the report to ensure proper data operation and utilization. Final visualization created by Tableau and symbolic representations have been demonstrated with explanations.  
 </p>
 Detailed information have been attached in the following links:
 <a href="Tableau/final.pdf" target="_blank">Report,  </a>
@@ -47,17 +47,24 @@ Detailed information have been attached in the following links:
 ### Data Visualization Group Project
 Location: USYD  
 Duration: 2021.4-2021.5  
+<p align="justify">
+The purpose of the project about exploratory data analysis on mobile devices data is to discover the general trend of mobile devices and the companies that tried to lead the market with new features. The most successfully market-leading companies have been listed finally after comparison and analysis. Our team starts with data type analysis and periods division which are the fundamental and essential parts. The following parts are visualizations based on different durations to understand the trend of different devices in different periods and detect representative companies that led the change of the new features. Tableau was the key tool we used to create diagrams and all explanations were based on the charts. Common visual attributes like color, shape, and size have been considered to increase the readability of charts and help stakeholders better understand and make decisions. 
+</p>
+Detailed information have been attached in the following links:
+<a href="LTA/TPE_Market_Research_Report_FINAL_pptx.pdf" target="_blank">Presentation,  </a>
+<a href="LTA/1.png" target="_blank">Certification</a> 
 
 ### Data Analysis in the Social Sciences
 Location:USYD  
 Duration: 2021.12  
-
+<p align="justify">
+  
 ### Home Hemodialysis Research Project
 Location USYD  
 Duration: 2021.8-Present  
 Supervisor: Professor Jinman Kim  
 Co-supervisor: Dr Na Liu  
-
+<p align="justify">
 
 ### Markdown
 
