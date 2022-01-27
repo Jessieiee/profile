@@ -34,7 +34,7 @@ Detailed information have been attached in the following links:
 <a href="LTA/TPE_Market_Research_Report_FINAL_pptx.pdf" target="_blank">Presentation,  </a>
 <a href="LTA/1.png" target="_blank">Certification</a>
 
-### Data Viualization Individual Project
+### Data Visualization Individual Project
 Location: USYD  
 Duration: 2021.2-2021.3  
 Tools: Tableau  
