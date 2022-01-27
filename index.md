@@ -41,8 +41,8 @@ Duration: 2021.2-2021.3
 The city of Sydney undertakes the Floor Space and Employment Survey (FSE) every five years to collect the data on all industries for every building in the area. This project started in 2012 and has finished three times of collection, each survey took around 10 months to complete. During the data collection phase, surveyors visited each business in the city of Sydney to record specific data needed in the surveys. The project aims to analyze the occupation of FES industries between 2012 and 2017 to help stakeholders better understand the trend of business development and provide help to find jobs or make decisions. Data type and typical mistakes have been discussed in the report to ensure proper data operation and utilization. Final visualization and symbolic representations have been demonstrated with explanations.  
 </p>
 Detailed information have been attached in the following links:
-<a href="LTA/TPE_Market_Research_Report_FINAL_pptx.pdf" target="_blank">Presentation,  </a>
-<a href="LTA/1.png" target="_blank">Certification</a>
+<a href="Tableau/final.pdf" target="_blank">Report,  </a>
+<a href="https://public.tableau.com/app/profile/ye.cai/viz/IndustriesDistributioninSydneyin2012and2017/Dashboard" target="_blank">Visualiozation</a>
 
 ### Data Visualization Group Project
 Location: USYD  
