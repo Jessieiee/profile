@@ -37,7 +37,7 @@ Detailed information have been attached in the following links:
 ### Data Viualization Individual Project
 Location: USYD  
 Duration: 2021.2-2021.3  
-Software: Tableau  
+Tools: Tableau  
 <p align="justify">
 The city of Sydney undertakes the Floor Space and Employment Survey (FSE) every five years to collect the data on all industries for every building in the area. This project started in 2012 and has finished three times of collection, each survey took around 10 months to complete. During the data collection phase, surveyors visited each business in the city of Sydney to record specific data needed in the surveys. The project aims to analyze the occupation of FES industries between 2012 and 2017 to help stakeholders better understand the trend of business development and provide help to find jobs or make decisions. Data type and typical mistakes have been discussed in the report to ensure proper data operation and utilization. Final visualization created by Tableau and symbolic representations have been demonstrated with explanations.  
 </p>
@@ -48,7 +48,7 @@ Detailed information have been attached in the following links:
 ### Data Visualization Group Project
 Location: USYD  
 Duration: 2021.4-2021.5  
-Software: Tableau  
+Tools: Tableau  
 <p align="justify">
 The purpose of the project about exploratory data analysis on mobile devices data is to discover the general trend of mobile devices and the companies that tried to lead the market with new features. The most successfully market-leading companies have been listed finally after comparison and analysis. Our team starts with data type analysis and periods division which are the fundamental and essential parts. The following parts are visualizations based on different durations to understand the trend of different devices in different periods and detect representative companies that led the change of the new features. Tableau was the key tool we used to create diagrams and all explanations were based on the charts. Common visual attributes like color, shape, and size have been considered to increase the readability of charts and help stakeholders better understand and make decisions. 
 </p>
@@ -59,7 +59,7 @@ Detailed information have been attached in the following links:
 ### Data Analysis in the Social Sciences
 Location:USYD  
 Duration: 2021.12  
-Software: R Language  
+Tools: R Language  
 <p align="justify">
 The bushfire season in eastern Australia began early in 2019, with several serious fires across Northern Australia in June, followed by the unprecedented burning of subtropical rainforest in Queensland in September. In the following months the fire moved along the coast of New South Wales, and reached East Victoria by late December. Sydney and Canberra were shrouded in smoke for large parts of Spring and Summer. Breathing masks sold out in Melbourne in January, when it too was covered by ash from the nearby fires. Most experts say the hot and dry conditions that made these fires so severe were exacerbated by climate change. Others mostly non-experts blamed arson or a lack of hazard reduction burns. This leads us to wonder if the scale and intensity of these fires, and the widespread impact from smoke across several of Australia’s largest metropolitan areas, may have shifted public opinion on whether climate change was occurring in Australia. 
 </p>
@@ -75,9 +75,14 @@ Location USYD
 Duration: 2021.8-Present  
 Supervisor: Professor Jinman Kim  
 Co-supervisor: Dr Na Liu  
+Tools: Machine Learning, Deep Learning, Natural language processing  
 <p align="justify">
-
-
+Remote patient monitoring (RPM) has rapidly become a common approach for completing patients' data collection in the last decades. RPM is a telehealth technology that enables the collection of patients’ data in an outside location instead of a medical center, such as at home or in a remote area. Implementation of RPM system realizes real-time monitoring and information storage ensure effective two-way communication between patients and health providers which could improve patients’ experience. One of the biggest purposes of RPM is to promote and intervene in compliance behaviors in chronic treatment like hemodialysis, as patient compliance is essential to ensure high-quality treatment results. Compared with usual care, RPM could significantly improve both self-report and medical adherence during therapy. Non-compliance behavior (e.g., ignoring medical recommendations, resisting attending sessions, and rebellious mood) would waste resources and money for clinics. In the US, the cost of non-compliance patients in 2015 was up to $290 billion and most of them paid for unfollowing regulations. 
+</p>
+<p align="justify">
+In this study, the aim was to resolve the ignorance of communication by analyzing the relationship between the frequency of text messages and the compliance with combined emotions. Several machine learning methods would be used to classify and calculate the accuracy of predictions. The result will prove whether the number of messages would affect compliance and the role of emotions in communication. More suggestions about how to improve health care services and more tips about communications can be proposed to increase patients’ satisfaction and reduce nonadherence. The rest of the paper contains the introduction of hemodialysis to understand the background and gaps, followed by methods introduction to explain the algorithms of different machine learning methods.
+</p>
+<a href="Hemodialysis/Report.pdf" target="_blank">Report,  </a>
 
 ### Support or Contact
 
