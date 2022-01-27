@@ -85,11 +85,9 @@ In this study, the aim was to resolve the ignorance of communication by analyzin
 Detailed information have been attached in the following links:
 <a href="Hemodialysis/Report.pdf" target="_blank">Report(Incomplete)  </a>
 
-### Support or Contact
+### Contact
 Name: Ye Cai  
 Email: caiye2093@gmail.com  
 Mobile: 0420404382  
-Address: Zetland, New South Wales, 2017
+Address: Zetland, New South Wales, 2017  
 Linkedin: <a href="https://www.linkedin.com/in/ye-cai-907131206/" target="_blank">Ye Cai</a>  
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
