@@ -17,24 +17,32 @@ The project we delivered to our client is a website about the QUT AR project, wh
 <p align="justify">
 My responsibilities in the capstone can be divided into two parts. The first part is team coordination. For example, collecting and arranging documents before weekly meetings with our client. Communicating with team members to update working progress to ensure the project can be completed timely. In addition, upload meeting notes and share important information on Trello to help team members keep up the pace. The second part is the individual working part. Release plans and user stories have been drafted and continuously updated after weekly meetings and customer requests. Meanwhile, I created the structure of the website and the draft of each page after discussing it with team members and the client. 
 </p> 
-Detailed information and report have been attached in the following link: 
+Detailed information and report have been attached in the following links: 
 <a href="Capstone/Team_Omnipotent_Demo.mp4" target="_blank">Website Demo, </a>
 <a href="Capstone/Final_Report.pdf" target="_blank">Final report</a>
 
-### Launch U Trade Accelerator
+### Launch U Trade Accelerator Program
 Location: QUT  
-Duration: 2020.7-2020.8  
+Duration: 2020.7-2020.8 
+<p align="justify">
 Turner Precision Engineering (Aust) Pty Ltd is a family-owned and operated business located on the Sunshine Coast. With over 40+ years of experience in the industry, TPE has a reputation for working closely with customers, helping to streamline processes, and refining component engineering procedures. With a lifetime of experience across a wide range of industries including medical, mining, defense, aviation, and agriculture TPE has the knowledge and technical skill to tackle projects from virtually any field. TPE currently sells directly to the USA via their website and Amazon, however, looking to continue expansion in the USA. The goal of this project is to help them identify potential problems to better improve their competitiveness, analyze their current situations, and provide a new development direction by market research.  
-
+</p>
+<p align="justify">
 My responsibilities in this project are competitor analysis which means making comparisons with similar companies from different aspects to find advantages and weaknesses. I selected five of the most popular related companies and identified six areas that must be considered after communicating with clients. After collecting data from websites like Amazon and Google, a chart was utilized to display the results. Different colors were applied to display different situations, green denotes advantage exists and red represents weakness respectively.  
-
-Detailed information have been attached in the following link: 
+</p>
+Detailed information have been attached in the following links: 
 <a href="LTA/TPE_Market_Research_Report_FINAL_pptx.pdf" target="_blank">Presentation,  </a>
 <a href="LTA/1.png" target="_blank">Certification</a>
 
 ### Data Viualization Individual Project
 Location: USYD  
 Duration: 2021.2-2021.3  
+<p align="justify">
+The city of Sydney undertakes the Floor Space and Employment Survey (FSE) every five years to collect the data on all industries for every building in the area. This project started in 2012 and has finished three times of collection, each survey took around 10 months to complete. During the data collection phase, surveyors visited each business in the city of Sydney to record specific data needed in the surveys. The project aims to analyze the occupation of FES industries between 2012 and 2017 to help stakeholders better understand the trend of business development and provide help to find jobs or make decisions. Data type and typical mistakes have been discussed in the report to ensure proper data operation and utilization. Final visualization and symbolic representations have been demonstrated with explanations.  
+</p>
+Detailed information have been attached in the following links:
+<a href="LTA/TPE_Market_Research_Report_FINAL_pptx.pdf" target="_blank">Presentation,  </a>
+<a href="LTA/1.png" target="_blank">Certification</a>
 
 ### Data Visualization Group Project
 Location: USYD  
