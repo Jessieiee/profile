@@ -3,7 +3,7 @@
 A hardworking and reliable individual who is a master's student at USYD, majoring in Information Technology. Learned several skills include R language and python, Tableau visualization, machine learning, and SQL. Highly passionate about helping team members during team working and provide a high working efficiency. Willing to confront new challenges and learn new technologies.
 </p>
 
-## Projects
+## PROJECT EXPERIENCE
 ### Capstone Project
 Location: QUT  
 Duration: 2020.3-2020.11  
