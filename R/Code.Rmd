@@ -1,0 +1,903 @@
+---
+title: "Analyzing Australian Attitudes on Climate Change Before and After 2019-20 Bushfires"
+author: "510090014"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Introduction 
+
+The bushfires broke out from eastern Australia in early 2019 and spread to several places includes Queensland and east Victoria in the following months. About 78.6% of Australians who were exposed to the bushfire experienced a direct or indirect impact from the bushfire and smoke. Meanwhile, the bushfire also destroyed nearly 2.9 million Australians' properties (Biddle, 2020). Wen (2021) pointed out that the proportion of emergency medical visits for respiratory and cardiovascular diseases which are directly caused by bushfires increased by 6% and 10% respectively. The bushfire brought huge damage to Australia's environment, economy, and human health. Many studies have proved the relationship between climate change and bushfire (Biddle, 2020; “Polling – Bushfire crisis”, 2020; Hunter, 2021). Meanwhile, Brulle (2012) and Lee (2015) proposed that different kinds of people have different perceptions on climate change. Therefore, it is necessary to analyze whether Australian attitudes to climate change shift after experiencing extreme weather events and the impact by characteristics or variables of the different crowds.  
+
+In this report, the objective is to explore Australian attitudes on climate change after experiencing weather disasters. A logistic regression would be implemented to analyze the perceptions shift to climate change and the impact of several variables would be confirmed if the shift exists. My hypothesis is that Australian attitudes to climate change shifted after the 2019-20 bushfires and variables including government trust, religiosity, political orientations, demographics, personal experience, and media coverage would impact opinion change.  
+
+\vspace{6mm}
+
+# Literature and theory
+
+As the weather changes get more and more attention, many studies have focused on analyzing public opinions on climate change in the past decade. Most experts believe that people's perceptions would change after experiencing events like flooding and drought (Shao, 2014; Biddle, 2020; Carmichael, 2017; Demski, 2016). The most significate and common shift is the increase concern about climate change. Several variables or factors are proposed to predict public opinion or shifted attitudes. These variables or factors can be divided into five groups: religious, political orientations, trust, demographics and personal experience.   
+
+Both Thomsen (2020) and Lee (2015) prove that religious belief is a variable that affects the perception of climate change. Political orientation is similar to religion because different parties or factions have different positions (Hamilton, 2012). For example, Republicans are less likely than democrats to consider climate change as an urgent issue (Shao, 2014). Religious and political orientation are two factors in motivated reasoning theory which play an important role in attitude change. Kahan (2012) stated that individuals prefer to align their opinions with others with the same identity.   
+
+Demographic including age, gender, education level and income is another important factor in analyzing and predicting people opinions (Biddle, 2020; Lee, 2015; Shao, 2014; Hamilton, 2011). Personal experience related to weather phenomena has also been proposed by Demski (2016) to better predict the influence of climate change and people's responses but Konisky (2016) believed that experience has less effect. The theory of human motivation can be utilized to explain the relationship between income or experience and attitudes of climate change. Maslow (1943) proposed the hierarchies of prepotency which displays that people often prioritize their basic physiological requirements including economic situation and quality of life before turning their attention to other needs such as environmental quality.  
+
+Trust including the credibility of information, government, and experts has a significant impact on the acceptance of information and the transformation to concern (Malka, 2009). Thomsen (2020) also stated that people with higher trust are more likely to take environmental protection actions. The social cognitive theory explains the relationship between trust and social attitude. In addition, the attitudes can be related to education levels as different individuals’ knowledge acquisitions directly impact the cognition of society. 
+
+Age and gender are regarded as confounding variables that need to be controlled under different conditions. Kaciuba-Uscilko (2001) mentioned the differences in psychological, behavioral, and physiological factors of male and female. Similarly, different age groups would have different tendencies and perceptions (Chopik, 2018). All these factors would impact the final attitudes and cause poor or biased results if ignored.  
+
+In sum, based on theories of motivated reasoning, social cognitive, and human motivation, we hypothesized that Australian attitudes to climate change shifted after experiencing 2019-20 bushfires to better match opinions of other people with the same position or meet their basic requirements. Confounding factors would be controlled to explore the impact of different variables (religious, political orientations, trust, income, education level, and personal experience) on the shift in climate change perceptions. 
+
+\vspace{6mm}
+
+# Data and methodology 
+
+The Australian opinion data used in this report was collected from surveys before and after the bushfires. Respondents who completed the first survey in 2019 were invited again to participate in the second survey in 2020 to record their attitudes after experiencing extreme weather disasters. Meanwhile, data manipulations and transformations like recoding or rescaling are applied to ensure the consistency and correctness of data format and provide help in data extraction. For example, making classifications based on different characteristics or representing the textual information with a numeric label.  
+
+## Dependent variables
+Australian attitude is the primary focus of this report. There are two possible dependent variables that can be collected from the Q29 in the survey which directly associate with personal perceptions about climate change, whether climate change exists and climate change is due to human activity or natural causes respectively. Finally, attitudes to climate change can be grouped into three: human activity, natural causes, and equally by human activity and natural causes. If the choices of the respondents in the two surveys are different, it means that the attitude of the participants has changed after the fire. Otherwise, the attitude has not changed. 
+
+## Independent variables
+Independent variables are government trust, religiosity, political orientations, demographics (education level and income), and personal experience. Data from relevant questions with independent variables would be applied to the analysis which has been displayed in Appendix. 
+
+Religious and political orientation are two variables related to motivated reasoning theory which have been approved the impact on attitudes on climate change (Thomsen, 2020; Hamilton, 2012; Kahan, 2012). Two major parties (liberal-national coalition and labor) and the five most popular religions (Atheist, Agnostic, Anglican, Catholic, and Christian) are extracted to measure and analyze. We assumed that different parties and religions have different trends in attitude shifts. 
+
+In addition, income and trust have been shown to be other possible predictors of attitudes shifts which can be explained by human motivation and social cognitive theories (Demski, 2016; Maslow, 1943; Malka, 2009). To better measure different levels of the economic situation and the trust of the government, the income and trust have been divided into five parts from very low to very high. The hypothesis is that higher-income or trust have a higher possibility to shift final perceptions.  
+
+Education level and personal experience is two essential factors needed to be considered to predict people attitudes (Hamilton, 2011; Shao, 2014). Both social cognitive and human motivation theories might explain the relationships which have mentioned in the literature. Education level has been grouped by different academic degrees and personal experience can be measured by numbers which means a more serious effect with a larger number. Suppose that higher education level or more serious experience are more likely to change opinions.  
+
+## Confounding variables
+Age and gender are two confounding factors that need to be controlled during analysis as they could impact both independent and dependent variables and cause distorted results. Binary variables are created to denote gender (“male” = 1, “female” = 2) and age (“18-34” = 1, “35-54” = 2, “54+” = 3). The hypothesis is that different groups of gender and age have effects in different conditions.  
+
+Finally, a logistic regression model would be applied to analyze the relationship between dependent and independent variables as logistic regression is easy to realize and interpret the output coefficients and quite suitable for estimating probabilities.   
+
+
+\vspace{6mm}
+
+# Results
+```{r libraries, message=FALSE, warning=FALSE, paged.print=FALSE}
+library(dplyr)
+library(sjlabelled)
+library(labelled)
+library(tidyverse)
+library(ggplot2)
+library(scales)
+library(haven)
+library(patchwork)
+library(arm)
+library(wesanderson)
+```
+```{r load data}
+fire_data <- read_sav('Data/Q1 Did Australian attitudes towards towards climate change shift before and after the 2019 fires/Survey data.sav')
+```
+
+```{r variable selection and cleaning, warning=FALSE}
+final_data <- fire_data %>%
+  mutate(gender = dplyr::recode(gender,
+                                '1' = 1, # Male
+                                '2' = 2, # Female
+                                '8' = NULL,
+                                '9' = NULL),
+         age_group = dplyr::recode(agegroup,
+                                   '1' = 1, # 18-24
+                                   '2' = 1, # 25-34
+                                   '3' = 2, # 35-44
+                                   '4' = 2, # 45-54
+                                   '5' = 3, # 55-64
+                                   '6' = 3, # 65+
+                                   .default = NULL),
+        education_level = dplyr::recode(Q2,
+                                        '1' = 1, # Less than year 12
+                                        '2' = 2, # Year 12 or equivalent
+                                        '3' = 3, # Advanced Diploma and Diploma
+                                        '4' = 4, # Bachelor Degree
+                                        '5' = 5, # Graduate Diploma or Graduate Certificate
+                                        '6' = 6, # Postgraduate Degree
+                                        '8' = NULL,
+                                        '9' = NULL),
+        polital = dplyr::recode(Q15b,
+                               '1' = 1, # The Liberal-National Coalition
+                               '2' = 2, # The Labor Party
+                               '8' = NULL, 
+                               '9' = NULL),
+        trust = dplyr::recode(Q22,
+                              '1' = 5, # Always
+                              '2' = 4, # Most of the time
+                              '3' = 3, # About half the time
+                              '4' = 2, # Some of the time
+                              '5' = 1, # Never
+                              '8' = NULL,
+                              '9' = NULL),
+        personal_experience1 = dplyr::recode(Q7_redux_1,
+                                            '1' = 1, # Not effect
+                                            '2' = 2,
+                                            '3' = 3,
+                                            '4' = 4,
+                                            '5' = 5,
+                                            '6' = 6,
+                                            '7' = 7, # seriously effect
+                                            '8' = NULL,
+                                            '9' = NULL),
+        personal_experience2 = dplyr::recode(Q7_redux_2,
+                                            '1' = 1, # Not effect
+                                            '2' = 2,
+                                            '3' = 3,
+                                            '4' = 4,
+                                            '5' = 5,
+                                            '6' = 6,
+                                            '7' = 7, # seriously effect
+                                            '8' = NULL,
+                                            '9' = NULL),
+        personal_experience3 = dplyr::recode(Q7_redux_3,
+                                            '1' = 1, # Not effect
+                                            '2' = 2,
+                                            '3' = 3,
+                                            '4' = 4,
+                                            '5' = 5,
+                                            '6' = 6,
+                                            '7' = 7, # seriously effect
+                                            '8' = NULL,
+                                            '9' = NULL),
+        personal_experience4 = dplyr::recode(Q7_redux_4,
+                                            '1' = 1, # Not effect
+                                            '2' = 2,
+                                            '3' = 3,
+                                            '4' = 4,
+                                            '5' = 5,
+                                            '6' = 6,
+                                            '7' = 7, # seriously effect
+                                            '8' = NULL,
+                                            '9' = NULL),
+        personal_experience5 = dplyr::recode(Q7_redux_5,
+                                            '1' = 1, # Not effect
+                                            '2' = 2,
+                                            '3' = 3,
+                                            '4' = 4,
+                                            '5' = 5,
+                                            '6' = 6,
+                                            '7' = 7, # seriously effect
+                                            '8' = NULL,
+                                            '9' = NULL),
+        income = dplyr::recode(Q4,
+                               '1' = 1, # very low
+                               '2' = 1,
+                               '3' = 1, 
+                               '4' = 2, # low
+                               '5' = 2, 
+                               '6' = 2,
+                               '7' = 3, # median
+                               '8' = 3,
+                               '9' = 3,
+                               '10' = 4, # high
+                               '11' = 4,
+                               '12' = 4,
+                               '13' = 5, # very high
+                               '14' = 5,
+                               '15' = 5 
+                               ),
+        religious = dplyr::recode(Q3,
+                                 '1' = 1, # Atheist
+                                 '2' = 2, # Agnostic
+                                 '4' = 3, # Anglican
+                                 '5' = 4, # Catholic
+                                 '13' = 5, # Christian
+                                 '19' = NULL, # Nothing in particular
+                                 '3' = 6, # other
+                                 '6' = 6,
+                                 '7' = 6,
+                                 '8' = 6,
+                                 '9' = 6,
+                                 '10' = 6,
+                                 '11' = 6,
+                                 '12' = 6,
+                                 '14' = 6,
+                                 '15' = 6,
+                                 '16' = 6,
+                                 '17' = 6,
+                                 '18' = 6,
+                                 '20' = 6)
+         )%>%
+  mutate(previous_attitude = case_when(Q29a == 1 | Q29c == 1 ~ 1, # Human activity
+                                       Q29a == 2 | Q29c == 2 ~ 2, # Nature causes
+                                       Q29a == 3 | Q29c == 3 ~ 3)) %>% # Equally
+  mutate(current_attitude = case_when(Q29_a == 1 | Q29_c == 1 ~ 1, 
+                                       Q29_a == 2 | Q29_c == 2 ~ 2,
+                                       Q29_a == 3 | Q29_c == 3 ~ 3)) %>%
+  mutate(attitude_change = case_when(previous_attitude == current_attitude ~0,
+                                     previous_attitude != current_attitude ~1)) %>%
+  mutate(experience = personal_experience1 + personal_experience2 + personal_experience3 + personal_experience4 + personal_experience5) %>%
+  dplyr::select(gender, age_group, education_level, income, religious, polital, trust, experience, previous_attitude, current_attitude, attitude_change, age)
+
+```
+
+From the first bar charts, the most obviously change is that about half of the Australians who believed climate change is caused equally by human activity and natural factors modified their attitude after experiencing the bushfire. Meanwhile, the number of people who insisted nature causes lead the temperature issue slightly reduce. These reductions are manifested in the increase in the number of people who agree that human activities caused world temperature problems. Consequently, parts of Australians shifted their opinions after the 2019-20 fires and most of Australians regard human activities as the main reason of climate change.  
+```{r attitude, fig.height=4, fig.width=6, message=FALSE, warning=FALSE}
+previous_attitude <- ggplot(final_data,aes(x=previous_attitude, fill=factor(previous_attitude)))+
+  geom_bar() +
+  scale_fill_discrete(name=" ",
+                         breaks=c("1", "2",'3'),
+                         labels=c("Human activity", "Nature causes", 'Equally')) +
+  theme_minimal() +
+  xlab(NULL) +
+  scale_x_discrete(limits = c("Human", "Nature", 'Equally')) +
+  scale_y_continuous(name = 'Number of People') +
+  labs(title = 'Before Bushfires') +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size = 10),
+        legend.position = 'bottom')
+
+current_attitude <- ggplot(final_data,aes(x=current_attitude, fill=factor(current_attitude)))+
+  geom_bar() +
+  scale_fill_discrete(guide=FALSE) +
+  theme_minimal() +
+  xlab(NULL) +
+  scale_x_discrete(limits = c("Human", "Nature", 'Equally')) +
+  scale_y_continuous(name = 'Number of People') +
+  labs(title = 'After Bushfires') +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size = 10),
+        legend.position = 'bottom')
+previous_attitude + current_attitude +
+  plot_annotation(title = 'Figure 1: Attitude Comparison') +
+  plot_layout(nrow = 1)
+```
+
+## Education Level
+Analyze from the perspective of education level, different levels of education display little effect on the modify of attitudes. The tendency of attitude changes decreases with the increase of education level. However, judging from the second figure, the changes in opinions expressed by groups of different genders or ages are different. Compared with males, females are less likely to change their opinions with less educated, but the situation is opposite in higher education. In different age groups, education levels have the least impact on the attitudes of middle-aged people (35-54 years old). Youth adults (18-34) who have achieved secondary education level including advanced diploma and bachelor have more probabilities to change perceptions than older adults (55+) with the same education level.  
+
+```{r education level, message=FALSE, warning=FALSE}
+education_gender_data <- final_data %>%
+  dplyr::select(gender, education_level, previous_attitude, current_attitude, attitude_change) %>%
+  group_by(gender,education_level, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count)) %>%
+  filter(attitude_change == 1)
+
+education_gender <- ggplot(education_gender_data, aes(x = education_level, y = pre, color = factor(gender))) +
+  geom_line(stat='identity',size=1) +
+  scale_y_continuous(name = 'Attitude Change', limits = c(0,0.3), labels = percent) +
+  scale_x_discrete(limits = c('Below year 12',' Year 12','Advance Diploma','Bachelor','Graduate Diploma ','Postgraduate')) +
+  scale_colour_manual(name="Gender",
+                      breaks=c("1", "2"),
+                      values = c("#0072B2", "#D55E00"),
+                      labels=c("Male", "Female")) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10, angle = 45, hjust = 1),
+        axis.text.y = element_text(size = 8))
+
+education_age_data <- final_data %>%
+  dplyr::select(age_group, education_level, previous_attitude, current_attitude, attitude_change) %>%
+  group_by(age_group,education_level, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count)) %>%
+  filter(attitude_change == 1)
+
+education_age <- ggplot(education_age_data, aes(x = education_level, y = pre, color = factor(age_group))) +
+  geom_line(stat='identity',size=1) +
+  scale_y_continuous(name = 'Attitude Change', limits = c(0,0.3), labels = percent) +
+  scale_x_discrete(limits = c('Below year 12',' Year 12','Advance Diploma','Bachelor','Graduate Diploma ','Postgraduate')) +
+  scale_colour_manual(name="Age",
+                         breaks=c("1", "2",'3'),
+                         values = c('#009E73','#CC79A7','#E69F00'),
+                         labels=c("18-34", "35-54",'55+')) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10, angle = 45, hjust = 1),
+        axis.text.y = element_text(size = 8)
+        )
+education_gender + education_age+
+  plot_annotation(title = 'Figure 2: Attitude Change in Different Educational Levels') +
+  plot_layout(nrow = 2)
+```
+
+## Income
+From the third graph, income displays a significant influence on people's attitudes. Australians with lower or very high incomes are more likely to change their perceptions of climate change. There is not much distinction between men and women in the aspect of economic. It is worth noting that adults who are older than 55 years old with a very high income have the most possibility to shift their view on climate change. In addition, middle-aged people with very high income and youth adults with median income are least likely to change their opinions.
+
+```{r income, message=FALSE, warning=FALSE}
+income_gender_data <- final_data %>%
+  dplyr::select(gender, income, previous_attitude, current_attitude, attitude_change) %>%
+  group_by(gender,income, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count)) %>%
+  filter(attitude_change == 1)
+
+income_gender <- ggplot(income_gender_data, aes(x = income, y = pre, fill = factor(gender))) +
+  geom_bar(stat='identity') +
+  scale_y_continuous(name = 'Attitude Change', labels = percent) +
+  scale_x_discrete(limits = c('Very low',' Low','Median', 'High', 'Very high')) +
+  scale_fill_manual(name="Gender",
+                         breaks=c("1", "2"),
+                         values = c("#0072B2", "#D55E00"),
+                         labels=c("Male", "Female")) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10, angle = 45,hjust = 1),
+        axis.text.y = element_text(size = 10))
+
+income_age_data <- final_data %>%
+  dplyr::select(age_group, income, previous_attitude, current_attitude, attitude_change) %>%
+  group_by(age_group,income, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count)) %>%
+  filter(attitude_change == 1)
+
+income_age <- ggplot(income_age_data, aes(x = income, y = pre, fill = factor(age_group))) +
+  geom_bar(stat='identity') +
+  scale_y_continuous(name = 'Attitude Change', labels = percent) +
+  scale_x_discrete(limits = c('Very low',' Low','Median', 'High', 'Very high')) +
+  scale_fill_manual(name="Age",
+                         breaks=c("1", "2",'3'),
+                         values = c('#009E73','#CC79A7','#E69F00'),
+                         labels=c("18-34", "35-54",'55+')) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10,angle = 45, hjust = 1),
+        axis.text.y = element_text(size = 10))
+income_gender + income_age +
+  plot_annotation(title = 'Figure 3: Attitude Change in Different Income Levels') +
+  plot_layout(nrow = 1)
+```
+\vspace{6mm}
+
+## Political Orientation   
+Partisans is another variable that demonstrated an apparent effect on opinions change. Australians who support the liberal-national party coalition have more possibility to change attitudes than others who follow the labor party (Figure 4, 5). In addition, compared with men, women who prefer the liberal-national party are easier to modify views. Meanwhile, a similar situation occurred in age groups which are young adults from 18 to 34 years old have a higher percentage to change opinions than others if they support the liberal-national party.
+
+```{r polital, fig.height=4, fig.width=6, message=FALSE, warning=FALSE}
+polital_data_male <- final_data %>%
+  dplyr::select(gender,polital, previous_attitude, current_attitude, attitude_change) %>%
+  filter(gender == 1) %>% # Male
+  group_by(polital, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count))
+
+polital_male <- ggplot(polital_data_male, aes(x = polital, y = pre, fill = factor(attitude_change), label = attitude_change)) +
+  geom_bar(stat='identity') +
+  scale_y_continuous(name = 'Attitude Change',labels = percent) +
+  scale_x_discrete(limits = c('Liberal-National','Labor')) +
+  labs(title = 'Male', colour = 'attitude_change') +
+  scale_fill_manual(name="Attitude",
+                         breaks=c("0", "1"),
+                         values=c('#999999','#56B4E9'),
+                         labels=c("Not Change", "Changed")) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size = 10),
+        legend.position = 'bottom')
+
+polital_data_female <- final_data %>%
+  dplyr::select(gender,polital, previous_attitude, current_attitude, attitude_change) %>%
+  filter(gender == 2) %>% # Female
+  group_by(polital, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count))
+
+polital_female <- ggplot(polital_data_female, aes(x = polital, y = pre, fill = factor(attitude_change), label = attitude_change)) +
+  geom_bar(stat='identity') +
+  scale_y_continuous(name = 'Attitude Change',labels = percent) +
+  scale_x_discrete(limits = c('Liberal-National','Labor')) +
+  labs(title = 'Female', colour = 'attitude_change') +
+  scale_fill_manual(guide=FALSE,
+                    values=c('#999999','#56B4E9')) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size = 10),
+        legend.position = 'bottom')
+
+polital_data_age1 <- final_data %>%
+  dplyr::select(age_group,polital, previous_attitude, current_attitude, attitude_change) %>%
+  filter(age_group == 1) %>% # Female
+  group_by(polital, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count))
+
+polital_age1 <- ggplot(polital_data_age1, aes(x = polital, y = pre, fill = factor(attitude_change), label = attitude_change)) +
+  geom_bar(stat='identity') +
+  scale_y_continuous(name = 'Attitude Change',labels = percent) +
+  scale_x_discrete(limits = c('Liberal-National','Labor')) +
+  labs(title = 'Age:18-34', colour = 'attitude_change') +
+  scale_fill_manual(guide=FALSE,
+                    values=c('#999999','#56B4E9')) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size = 10),
+        legend.position = 'bottom')
+
+polital_data_age2 <- final_data %>%
+  dplyr::select(age_group,polital, previous_attitude, current_attitude, attitude_change) %>%
+  filter(age_group == 2) %>% # Female
+  group_by(polital, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count))
+
+polital_age2 <- ggplot(polital_data_age2, aes(x = polital, y = pre, fill = factor(attitude_change), label = attitude_change)) +
+  geom_bar(stat='identity') +
+  scale_y_continuous(name = 'Attitude Change',labels = percent) +
+  scale_x_discrete(limits = c('Liberal-National','Labor')) +
+  labs(title = 'Age:35-54', colour = 'attitude_change') +
+  scale_fill_manual(name="Attitude",
+                      values=c('#999999','#56B4E9'),
+                         breaks=c("0", "1"),
+                         labels=c("Not Change", "Changed")) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size = 10),
+        legend.position = 'bottom')
+
+polital_data_age3 <- final_data %>%
+  dplyr::select(age_group,polital, previous_attitude, current_attitude, attitude_change) %>%
+  filter(age_group == 3) %>% # Female
+  group_by(polital, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count))
+
+polital_age3<- ggplot(polital_data_age3, aes(x = polital, y = pre, fill = factor(attitude_change))) +
+  geom_bar(stat='identity') +
+  scale_y_continuous(name = 'Attitude Change',labels = percent) +
+  scale_x_discrete(limits = c('Liberal-National','Labor')) +
+  labs(title = 'Age:55+', colour = 'attitude_change') +
+  scale_fill_manual(guide=FALSE,
+                    values=c('#999999','#56B4E9')) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size = 10),
+        legend.position = 'bottom')
+
+polital_male + polital_female +
+  plot_annotation(title = 'Figure 4: Attitude Change in Different Partisans (Gender)') +
+  plot_layout(nrow = 1)
+
+```
+
+```{r polital by age, fig.height=4, fig.width=8, message=FALSE, warning=FALSE}
+polital_age1 + polital_age2 + polital_age3 +
+  plot_annotation(title = 'Figure 5: Attitude Change in Different Partisans (Age)') +
+  plot_layout(nrow = 1)
+```
+
+## Trust
+From the trust aspect, the degree of trust in the government is directly proportional to the possibility of shifting attitudes on climate change. Australians who have higher trust in the government policy or announcements would easier to change their perceptions (Figure 6). It is noteworthy that as the level of trust increases, women show a downward trend until they reach the fourth level of the most trust. They also demonstrated a higher likelihood to change views than men in the lowest and highest degree of trust. Moreover, apart from the highest level (always trust), trust in the government has less impact on adults over 34. Through the second line chart in the Figure 6, we can discover that older people more easily to change views than others when they have a high degree of trust in the government.
+
+```{r trust, message=FALSE, warning=FALSE}
+trust_gender_data <- final_data %>%
+  dplyr::select(gender, trust, previous_attitude, current_attitude, attitude_change) %>%
+  group_by(gender,trust, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count)) %>%
+  filter(attitude_change == 1)
+
+trust_gender <- ggplot(trust_gender_data, aes(x = trust, y = pre, color = factor(gender))) +
+  geom_line(stat='identity',size=1) +
+  scale_y_continuous(name = 'Attitude Change', labels = percent) +
+  scale_x_discrete(limits = c('Never', 'Sometime', 'Half', 'Most','Always')) +
+  scale_colour_manual(name="Gender",
+                         breaks=c("1", "2"),
+                         values = c("#0072B2", "#D55E00"),
+                         labels=c("Male", "Female")) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10, hjust = 1),
+        axis.text.y = element_text(size = 10))
+
+trust_age_data <- final_data %>%
+  dplyr::select(age_group, trust, previous_attitude, current_attitude, attitude_change) %>%
+  group_by(age_group,trust, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count)) %>%
+  filter(attitude_change == 1)
+
+trust_age <- ggplot(trust_age_data, aes(x = trust, y = pre, color = factor(age_group))) +
+  geom_line(stat='identity',size=1) +
+  scale_y_continuous(name = 'Attitude Change', labels = percent) +
+  scale_x_discrete(limits = c('Never', 'Sometime', 'Half', 'Most','Always')) +
+  scale_colour_manual(name="Age",
+                         breaks=c("1", "2",'3'),
+                         values = c('#009E73','#CC79A7','#E69F00'),
+                         labels=c("18-34", "35-54",'55+')) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10, hjust = 1),
+        axis.text.y = element_text(size = 10))
+
+trust_gender + trust_age +
+  plot_annotation(title = 'Figure 6: Attitude change in Different Trust') +
+  plot_layout(nrow = 2)
+
+```
+
+## Personal Experience
+Personal experience is another factor that needs to be considered. The result is quite different in gender and age classifications which has been exhibited in Figure 7. After comparing gender, we found out that personal experience has little influence on men’s revision opinions, but the impact is much greater on women. Women who received minor damage and impact has less likelihood to change opinions than men, but the situation is reversed when they experience damage more than the mean value. A similar situation appears in age groups which means adults older than 34 years old have a lower possibility to shift perceptions than others when they have a lower loss, but a higher likelihood when they confronted larger damage. Meanwhile, young adults (18-34) are more possible to shift their minds after experiencing the worst situations.
+
+```{r experience, message=FALSE, warning=FALSE}
+experience_gender_data <- final_data %>%
+  dplyr::select(gender, experience, previous_attitude, current_attitude, attitude_change) %>%
+  group_by(gender,experience, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count)) %>%
+  filter(attitude_change == 1)
+
+experience_gender <- ggplot(experience_gender_data, aes(x = experience, y = pre, color = factor(gender))) +
+  geom_smooth(se = FALSE) +
+  geom_point()+
+  scale_y_continuous(name = 'Attitude Change', labels = percent) +
+  scale_colour_manual(name="Gender",
+                         breaks=c("1", "2"),
+                         values = c("#0072B2", "#D55E00"),
+                         labels=c("Male", "Female")) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10, hjust = 1),
+        axis.text.y = element_text(size = 10))
+
+experience_age_data <- final_data %>%
+  dplyr::select(age_group, experience, previous_attitude, current_attitude, attitude_change) %>%
+  group_by(age_group,experience, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count)) %>%
+  filter(attitude_change == 1)
+
+experience_age <- ggplot(experience_age_data, aes(x = experience, y = pre, color = factor(age_group))) +
+  geom_smooth(se = FALSE) +
+  scale_y_continuous(name = 'Attitude Change', labels = percent) +
+  scale_colour_manual(name="Age",
+                         breaks=c("1", "2",'3'),
+                         values = c('#009E73','#CC79A7','#E69F00'),
+                         labels=c("18-34", "35-54",'55+')) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10, hjust = 1),
+        axis.text.y = element_text(size = 10))
+
+experience_gender + experience_age +
+  plot_annotation(title = 'Figure 7: Attitude Change in Different Experience') +
+  plot_layout(nrow = 2)
+```
+
+## Religious
+Religion is another variable mentioned in the motived reasoning theory, but no major influence has been detected after comparing and analyzing the charts. The only thing can be discussed is that women and middle-aged people who select Agnostic have less possibility than others to make a change on the views of climate change (Figure 8, 9). Therefore, religion would be removed from the variables in final logistic models as the impact is less than other factors and can be ignored.
+
+```{r regilious in gender, fig.height=5, fig.width=8, message=FALSE, warning=FALSE}
+religious_data_male <- final_data %>%
+  dplyr::select(gender,religious, previous_attitude, current_attitude, attitude_change) %>%
+  filter(gender == 1) %>% # Male
+  group_by(religious, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count))
+
+religious_male <- ggplot(religious_data_male, aes(x = religious, y = pre, fill = factor(attitude_change), label = attitude_change)) +
+  geom_bar(stat='identity') +
+  scale_y_continuous(name = 'Attitude Change',labels = percent) +
+  scale_x_discrete(limits = c('Atheist','Agnostic','Anglican','Catholic', 'Christian', 'Other')) +
+  labs(title = 'Male', colour = 'attitude_change') +
+  scale_fill_manual(name="Attitude",
+                         breaks=c("0", "1"),
+                       values=c('#999999','#56B4E9'),
+                         labels=c("Not Change", "Changed")) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10, angle = 45),
+        axis.text.y = element_text(size = 10),
+        legend.position = 'bottom')
+
+religious_data_female <- final_data %>%
+  dplyr::select(gender,religious, previous_attitude, current_attitude, attitude_change) %>%
+  filter(gender == 2) %>% # Female
+  group_by(religious, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count))
+
+religious_female <- ggplot(religious_data_female, aes(x = religious, y = pre, fill = factor(attitude_change), label = attitude_change)) +
+  geom_bar(stat='identity') +
+  scale_y_continuous(name = 'Attitude Change',labels = percent) +
+  scale_x_discrete( limits = c('Atheist','Agnostic','Anglican','Catholic', 'Christian', 'Other')) +
+  labs(title = 'Female', colour = 'attitude_change') +
+  scale_fill_manual(name="Attitude",
+                         breaks=c("0", "1"),
+                       values=c('#999999','#56B4E9'),
+                         labels=c("Not Change", "Changed")) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10, angle = 45),
+        axis.text.y = element_text(size = 10),
+        legend.position = 'bottom')
+
+religious_male + religious_female +
+  plot_annotation(title = 'Figure 8: Attitude Change in Different Religious (Gender)') +
+  plot_layout(nrow = 1)
+```
+
+```{r regilious in age, fig.height=5, fig.width=8, message=FALSE, warning=FALSE}
+religious_data_age1 <- final_data %>%
+  dplyr::select(age_group,religious, previous_attitude, current_attitude, attitude_change) %>%
+  filter(age_group == 1) %>% # Male
+  group_by(religious, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count))
+
+religious_age1 <- ggplot(religious_data_age1, aes(x = religious, y = pre, fill = factor(attitude_change), label = attitude_change)) +
+  geom_bar(stat='identity') +
+  scale_y_continuous(name = 'Attitude Change',labels = percent) +
+  scale_x_discrete(limits = c('Atheist','Agnostic','Anglican','Catholic', 'Christian', 'Other')) +
+  labs(title = 'Age:18-34', colour = 'attitude_change') +
+  scale_fill_manual(guide = FALSE,
+                      values=c('#999999','#56B4E9'),) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10, angle = 45),
+        axis.text.y = element_text(size = 10),
+        legend.position = 'bottom')
+
+religious_data_age2 <- final_data %>%
+  dplyr::select(age_group,religious, previous_attitude, current_attitude, attitude_change) %>%
+  filter(age_group == 2) %>% # Female
+  group_by(religious, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count))
+
+religious_age2 <- ggplot(religious_data_age2, aes(x = religious, y = pre, fill = factor(attitude_change), label = attitude_change)) +
+  geom_bar(stat='identity') +
+  scale_y_continuous(name = 'Attitude Change',labels = percent) +
+  scale_x_discrete(limits = c('Atheist','Agnostic','Anglican','Catholic', 'Christian', 'Other')) +
+  labs(title = 'Age:35-54', colour = 'attitude_change') +
+  scale_fill_manual(name="Attitude",
+                         breaks=c("0", "1"),
+                      values=c('#999999','#56B4E9'),
+                         labels=c("Not Change", "Changed")) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10, angle = 45),
+        axis.text.y = element_text(size = 10),
+        legend.position = 'bottom')
+
+religious_data_age3 <- final_data %>%
+  dplyr::select(age_group,religious, previous_attitude, current_attitude, attitude_change) %>%
+  filter(age_group == 3) %>% # Female
+  group_by(religious, attitude_change) %>%
+  summarize(count = n()) %>%
+  mutate(pre = count/sum(count))
+
+religious_age3 <- ggplot(religious_data_age3, aes(x = religious, y = pre, fill = factor(attitude_change), label = attitude_change)) +
+  geom_bar(stat='identity') +
+  scale_y_continuous(name = 'Attitude Change',labels = percent) +
+  scale_x_discrete(limits = c('Atheist','Agnostic','Anglican','Catholic', 'Christian', 'Other')) +
+  labs(title = 'Age:55+', colour = 'attitude_change') +
+  scale_fill_manual(guide = FALSE,
+                      values=c('#999999','#56B4E9'),) +
+  theme_minimal() +
+  xlab(NULL) +
+  theme(text = element_text(size = 12),
+        axis.text.x = element_text(size = 10, angle = 45),
+        axis.text.y = element_text(size = 10),
+        legend.position = 'bottom')
+
+religious_age1 + religious_age2 + religious_age3+
+  plot_annotation(title = 'Figure 9: Attitude Change in Different Religious(Age)') +
+  plot_layout(nrow = 1)
+```
+
+## Summary
+Finally, the logistic regression model was applied to establish associations between seven factors (age, gender, income, political orientation, trust, and personal experience) and dependent variables which is whether attitude on climate change shifted after bushfires. The result that contains coefficient values has been displayed in the summary. The reference object is women who achieved advanced diplomas, support the Labor party, have a high income, and always trust the government. It is obvious that trust and political orientation have a greater effect than other factors. Compared with women, men have less probability to change views. Meanwhile, the likelihood keeps decreasing with the climb of age. The changing trends of these variables are consistent with the previous description of different charts.  
+
+```{r model, message=FALSE, warning=FALSE}
+scale_data <- final_data %>%
+mutate(gender = dplyr::recode(gender,
+                                '1' = 'Male', # Male
+                                '2' = 'Female', # Female
+                                '8' = NULL,
+                                '9' = NULL),
+       education_level = dplyr::recode(education_level,
+                                        '1' = 'Less than year 12', # Less than year 12
+                                        '2' = 'Year 12 or equivalent', # Year 12 or equivalent
+                                        '3' = 'Advanced Diploma and Diploma', # Advanced Diploma and Diploma
+                                        '4' = 'Bachelor Degree', # Bachelor Degree
+                                        '5' = 'Graduate Diploma ', # Graduate Diploma or Graduate Certificate
+                                        '6' = 'Postgraduate Degree', # Postgraduate Degree
+                                        '8' = NULL,
+                                        '9' = NULL),
+        polital = dplyr::recode(polital,
+                               '1' = 'Liberal-National', # The Liberal-National Coalition
+                               '2' = 'Labor', # The Labor Party
+                               '8' = NULL, 
+                               '9' = NULL),
+       trust = dplyr::recode(trust,
+                              '1' = 'Never', 
+                              '2' = 'Sometimes', 
+                              '3' = 'Half of time', 
+                              '4' = 'Most', 
+                              '5' = 'Always'),
+        income = dplyr::recode(income,
+                               '1' = 'Very low',
+                               '2' = 'Low',
+                               '3' = 'Median', 
+                               '4' = 'High',
+                               '5' = 'Very high'
+                               )
+         
+  )
+scale_data$z.age <- scale(scale_data$age)/2
+scale_data$z.experience <- scale(scale_data$experience)/2
+model <- glm(attitude_change ~ gender + education_level + polital + trust + z.age + z.experience + income, family = binomial(link = 'logit'),data = scale_data)
+display(model)
+```
+
+\vspace{6mm}
+
+# Conclusion 
+
+This report aims to discover Australian attitudes on climate change before and after experiencing extreme weather disasters and investigate the impact of different variables. The prediction is accomplished by a logistic regression model and people have more probability to modify their opinions if the result is closer to 1. Theories of motivated reasoning, human motivation, and social cognition have been confirmed to have an effect on people to revision views. The result is that part of Australians would modify their perceptions on climate change to better match the opinions of other people with the same position or meet their basic requirements based on personal situations.  
+
+We proved that trust and political orientation have a strong influence on people's opinions. Higher trust or Australians who support the liberal-national party coalition indicates a higher probability to modify minds. Other variables contain education level, experience and income show less impact than trust and politics. For example, a higher education level or middle income implies a lower possibility to change opinions on climate change. In addition, controlling gender and age which are two confounding factors have also been ensuring useful to provide help on analysis and prevent distorted results. However, religion is not found to have any significant impact on opinion shifts.  
+
+The limitation is that repeated participation in the survey will also affect the opinions of the respondents, such as increasing the visibility of the problem or increasing the degree of attention to the subconscious problem. This situation does not exist among non-participants. Moreover, some survey questions are unrepresentative which means it is difficult to confirm participants' views on different aspects from one question. In the future, more targeted questions can be proposed in the surveys to better confirm respondents' views.   
+
+
+# Bibliography 
+
+Biddle, N., Edwards, B., Herz, D., & Makkai, T. (2020). Exposure and the impact on attitudes of the 2019-20 Australian Bushfires. _ANU Centre for Social Research and Methods._ Retrieved from https://csrm.cass.anu.edu.au/research/publications/exposure-and-impact-attitudes-2019-20-australian-bushfires-0
+
+Brulle, Carmichael, J., & Jenkins, J. C. (2012). Shifting public opinion on climate change: an empirical assessment of factors influencing concern over climate change in the U.S., 2002–2010. _Climatic Change, 114_(2), 169–188. https://doi.org/10.1007/s10584-012-0403-y
+
+Carmichael, & Brulle, R. J. (2017). Elite cues, media coverage, and public concern: an integrated path analysis of public opinion on climate change, 2001-2013. _Environmental Politics, 26_(2), 232–252. https://doi.org/10.1080/09644016.2016.1263433
+
+Castelfranchi, & Falcone, R. (2010). _Trust Theory: A Socio-Cognitive and Computational Model_ (1. Aufl.). Wiley. https://doi.org/10.1002/9780470519851
+
+
+Chopik, Bremner, R. H., Johnson, D. J., & Giasson, H. L. (2018). Age Differences in Age Perceptions and Developmental Transitions. _Frontiers in Psychology_, 9, 67–67. https://doi.org/10.3389/fpsyg.2018.00067
+
+Demski, Capstick, S., Pidgeon, N., Sposato, R. G., & Spence, A. (2016). Experience of extreme weather affects climate change mitigation and adaptation responses. _Climatic Change, 140_(2), 149–164. https://doi.org/10.1007/s10584-016-1837-4
+
+Hamilton. (2010). Education, politics and opinions about climate change evidence for interaction effects. _Climatic Change, 104_(2), 231–242. https://doi.org/10.1007/s10584-010-9957-8
+
+Hamilton. (2012). Did the Arctic Ice Recover?: Demographics of True and False Climate Facts. _Weather, Climate, and Society, 4_(4), 236–249. https://doi.org/10.1175/WCAS-D-12-00008.1
+
+Kaciuba-Uscilko, & Grucza, R. (2001). Gender differences in thermoregulation. _Current Opinion in Clinical Nutrition and Metabolic Care, 4_(6), 533–536. https://doi.org/10.1097/00075197-200111000-00012
+
+Kahan, Peters, E., Wittlin, M., Slovic, P., Ouellette, L. L., Braman, D., & Mandel, G. (2012). The polarizing impact of science literacy and numeracy on perceived climate change risks. _Nature Climate Change, 2_(10), 732–735. https://doi.org/10.1038/nclimate1547
+
+Konisky, Hughes, L., & Kaylor, C. H. (2015). Extreme weather events and climate change concern. _Climatic Change, 134_(4), 533–547. https://doi.org/10.1007/s10584-015-1555-3
+
+Lee, Markowitz, E. M., Howe, P. D., Ko, C.-Y., & Leiserowitz, A. A. (2015). Predictors of public climate change awareness and risk perception around the world. _Nature Climate Change, 5_(11), 1014–1020. https://doi.org/10.1038/nclimate2728
+
+Malka, Krosnick, J. A., & Langer, G. (2009). The Association of Knowledge with Concern About Global Warming: Trusted Information Sources Shape Public Thinking. _Risk Analysis, 29_(5), 633–647. https://doi.org/10.1111/j.1539-6924.2009.01220.x
+
+Maslow. (1943). A theory of human motivation. _Psychological Review, 50_(4), 370–396. https://doi.org/10.1037/h0054346
+
+Munoz-Carrier, Thomsen, D., & Pickering, G. J. (2020). Psychological and experiential factors affecting climate change perception: learnings from a transnational empirical study and implications for framing climate-related flood events. _Environmental Research Communications, 2_(4), 45003–. https://doi.org/10.1088/2515-7620/ab89f9
+
+Polling – Bushfire crisis and concern about climate change. (2020). _The Australia Institute._ Retrieved from https://australiainstitute.org.au/report/polling-bushfire-crisis-and-concern-about-climate-change/
+
+Shao, Keim, B. D., Garand, J. C., & Hamilton, L. C. (2014). Weather, Climate, and the Economy: Explaining Risk Perceptions of Global Warming, 2001–10. _Weather, Climate, and Society, 6_(1), 119–134. https://doi.org/10.1175/WCAS-D-13-00029.1
+
+Wen, Wu, Y., Xu, R., Guo, Y., & Li, S. (2022). Excess emergency department visits for cardiovascular and respiratory diseases during the 2019–20 bushfire period in Australia: A two-stage interrupted time-series analysis. _The Science of the Total Environment,_ 809, 152226–152226. https://doi.org/10.1016/j.scitotenv.2021.152226
+
+# Appendix
+## Survey questions corresponding to dependent variables
+Q29-a: You may have heard about the idea that the world's temperature may have been going up slowly over the past 100 years. What is your personal opinion on this? Do you think this has probably been happening, or do you think it probably hasn't been happening?  
+1. Has probably been happening  
+2. Probably hasn't been happening  
+
+Q29-b: Do you think a rise in the world's temperatures would be caused mostly by human activity, mostly by natural causes, or about equally by human activity and by natural causes? (If answers 1 to Q29-a)  
+1. Mostly by human activity  
+2. Mostly by natural causes  
+3. About equally by human activity and natural causes  
+
+Q29-c: Assuming it's happening, do you think a rise in the world's temperatures would be caused mostly by human activity, mostly by natural causes, or about equally by human activity and by natural causes? (If answers 2 or 3 to Q29-a)  
+1. Mostly by human activity  
+2. Mostly by natural causes  
+3. About equally by human activity and natural causes   
+
+## Survey questions corresponding to independent variables
+### Education Level
+Q2: What is your highest completed level of education? Please select one option only.  
+1. Less than year 12  
+2. Year 12 or equivalent  
+3. Advanced Diploma and Diploma  
+4. Bachelor Degree  
+5. Graduate Diploma and Graduate Certificate  
+6. Postgraduate Degree  
+
+### Income
+Q4: What is the total annual income, before tax or other deductions, for you and your family or others living with you from all sources? Please include any pensions and allowances, including superannuation contributions, amounts salary sacrificed, or any other automatic deductions and income from interest or dividends. Please select one option only.  
+1. Less than \$15,600 per year (Under $300 per week)  
+2. \$15,600 - \$20,799 per year (approximately \$300 - $399 per week)  
+3. \$20,800 - \$25,999 per year (\$400 - $499 per week)  
+4. \$26,000 - \$33,799 per year (\$500 - $649 per week)  
+5. \$33,800 - \$41,599 per year (\$650 - $799 per week)  
+6. \$41,600 - \$51,999 per year (\$800 - $999 per week)  
+7. \$52,000 - \$64,999 per year (\$1,000 - $1,249 per week)  
+8. \$65,000 - \$77,999 per year (\$1,250 - $1,499 per week)  
+9. \$78,000 - \$90,999 per year (\$1,500 - $1,749 per week)  
+10. \$91,000 - $103,999 per year (\$1,750 - \$1,999 per week)  
+11. \$104,000 - $155,999 per year (\$2,000 - \$2,999 per week)  
+12. \$156,000 - \$207,999 (\$3,000 - $3,999 per week)  
+13. \$208,000 - \$259,999 (\$4,000 - $4,999 per week)  
+14. \$260,000 - \$311,999 (\$5,000 - $5,999 per week)  
+15. \$312,000 or more per year (approximately $6,000 and over per week)  
+
+### Religion
+Q3: What is your religion? Please select one option only.  
+1. Atheist  
+2. Agnostic  
+3. Baptist  
+4. Anglican/Church of England  
+5. Catholic  
+6. Lutheran  
+7. Methodist  
+8. Other Protestant  
+9. Presbyterian  
+10. Pentecostal  
+11. Jehovah's Witnesses  
+12. Latter Day Saints (Mormon)  
+13. Other Christian  
+14. Jewish  
+15. Sikh  
+16. Buddhist  
+17. Hindu  
+18. Islam  
+19. Nothing in particular  
+20. Other (please specify)  
+
+### Political Orientation 
+Q15-b: If choosing between the two major parties, the Liberal-National Coalition or the Labor Party, which would you give your preference to in the House of Representatives? Please select one option only.  
+1. Liberal-National Party Coalition  
+2. The Labor Party
+
+### Trust
+Q22	How often can you trust the federal government in Canberra to do what is right?  
+1. Always  
+2. Most of the time  
+3. About half the time  
+4. Some of the time  
+5. Never  
+
+### Personal Experience
+Q7-redux 2	Below are several ways that people have been affected by bushfires in the last six months.
+
+From 1 to 7, where 1 not affected at all and 7 is very seriously affected, please rate how seriously you have been impacted in each of these ways. Please select one option for each.  
+a. Amount of time spent outdoors or exercising	  
+b. Holiday or travel plans	  
+c. Home or property damaged by fire	  
+d. Health from smoke	  
+e. Your place of work or business (e.g., closures, property damage)   
+	
+1. Not affected at all	
+2.			
+3.			
+4.			
+5.			
+6.			
+7. Very seriously affected	
+
+
+
+
+
+
+
+
