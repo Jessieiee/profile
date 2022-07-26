@@ -72,7 +72,7 @@ Detailed information have been attached in the following links:
   
 ### Home Hemodialysis Research Project
 Location: USYD  
-Duration: 2021.8-Present  
+Duration: 2021.8-2022.7  
 Supervisor: Professor Jinman Kim  
 Co-supervisor: Dr Na Liu  
 Tools: Machine Learning, Deep Learning, Natural language processing  
